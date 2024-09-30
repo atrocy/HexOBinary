@@ -1,0 +1,12 @@
+{
+  "name": "HexOBinary",
+  "tree": {
+    "$className": "DataModel",
+
+    "ReplicatedStorage": {
+      "HexOBinary": {
+        "$path": "src/HexOBinary"
+      }
+    }
+  }
+}
