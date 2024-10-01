@@ -1,3 +1,10 @@
+--[[
+    Made by Romazka57(aka atrocy/cheez1i)
+    #HexOBinary - Convert input into Binary, Octal and Hexadecimal
+
+    Documentation can be read in https://github.com/atrocy/HexOBinary/wiki !
+]]
+
 local hexobinary = {}
 hexobinary.__index = hexobinary
 

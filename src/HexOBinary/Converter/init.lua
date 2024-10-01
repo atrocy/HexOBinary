@@ -30,10 +30,6 @@ local hexnum = {
 
 local floor = math.floor
 
-function converter.isChar(num: number)
-    return (string.char(num) == '' and num) or string.char(num)
-end
-
 function converter.convert(input: string|number, option: option): string
     if not option then error('Provide an option.') return end
     if not input then error('Please provide an input to convert.') return end
@@ -45,7 +41,6 @@ function converter.convert(input: string|number, option: option): string
     local char_binary = ""
 
     local division_num = nil
-    -- local firstchar = true
 
     local exit = false
 
@@ -61,10 +56,7 @@ function converter.convert(input: string|number, option: option): string
 
             char_binary = char_binary..(hex[num] or num)
 
-            -- add and not firstchar if something breaks :sob:
             if division_num < optionNum then exit = true char_binary = char_binary..(hex[division_num] or division_num) end
-
-            -- firstchar = false
         end
         char_binary = char_binary:reverse()
         
@@ -73,7 +65,6 @@ function converter.convert(input: string|number, option: option): string
 
         exit = false
         division_num = nil
-        -- firstchar = true
         char_binary = ""
     end
 
@@ -87,12 +78,11 @@ function converter.decode(input: string, option: option): string|number
     local optionNum = options[option]
 
     local result = ""
-    local charNum = 0
-
     local t = input:split(' ')
 
     for _, encoded in t do
         local charIndex = #encoded-1
+        local charNum = 0
 
         for i = 1, #encoded do
             local char = encoded:sub(i, i)
@@ -104,7 +94,6 @@ function converter.decode(input: string, option: option): string|number
         end
 
         result = result..string.char(charNum)
-        charNum = 0
     end
 
     return tonumber(result) or result
