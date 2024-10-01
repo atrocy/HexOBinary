@@ -1,6 +1,8 @@
 # HexOBinary
 Convert strings and numbers into Binary, Octal and Hexadecimal!!
 
+*Get [HexOBinary](https://create.roblox.com/store/asset/88490453782194/HexOBinary?assetType=Model&externalSource=www) on Creator Store!*
+
 Example Code:
 
 ```lua
